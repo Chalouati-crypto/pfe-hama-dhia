@@ -15,7 +15,11 @@ export const emailSignIn = actionClient
       return { error: "Email not found" };
     }
 
-    await signIn("credentials", { email, password, redirectTo: "/" });
+    await signIn("credentials", {
+      email,
+      password,
+      redirectTo: "/articles/new",
+    });
 
     return { success: "User Signed in!" };
   });
